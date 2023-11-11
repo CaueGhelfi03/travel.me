@@ -1,0 +1,25 @@
+- Blog de viagens:
+
+- Informações sobre pontos turisticos
+	
+- Imagens tela principal (locais que já fui como por exemplo PARATY, UBATUBA
+PORTO-SEGURO, ilha bela...
+
+- Terá métricas de avaliações dos locais
+	Como por exemplo praias que já fui
+	Ou que algum outro usuario já tenha ido terá um sistema para inserir
+as avaliações
+
+- O usuário terá um perfil onde ele irá poder permitir se deixará em público 
+suas mensagens e informações sobre viagens ou se quiser deixar em privado
+
+- Terá informações sobre os pontos turísticos então se caso o usuário viajou
+para alguma cidade turistica terá uma história
+
+- ANOTAÇÕES DOCUMENTAÇÃO:
+
+O QUE É VIAJAR
+PORQUE VIAJAR
+TIPOS DE VIAGENS
+GRAND TOURIST
+BENEFICIOS DE VIAJAR
