@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<div lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel.me</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+  </head>
+  <div>
+    <div class="background">
+      <div class="header">
+        <div class="container">
+          <a href="index.html" 
+            ><img src="img/logo.svg" alt="logo travel.me" style="width: 50"
+          /></a>
+          <div class="navbar">
+            <ul>
+              <li><a href="index.html">Página inicial</a></li>
+              <li><a href="index.html#historia">Sobre mim</a></li>
+              <li><a href="">Contato</a></li>
+            </ul>
+          </div>
+          <div class="botoes">
+            <button class="botao1" onclick="cadastrar()"><a href="cadastro.html">Cadastrar-se</a></button>
+  
+            <button class="botao2" onclick="entrar()"><a href="login.html">Entrar</a></button>
+          </div>
+        
+        </div>
+      </div>
+
+      <div class="conteudoInicio">
+        <h1 class="inicialTitulo">Olá, viajantes!</h1>
+        <i><b class="textoInicio">Guarde suas lembranças conosco.</b></i>
+        <br />
+        <button class="botaoInicial"><a href="#">Saiba mais</a></button>
+      </div>
+    </div>
+
+    <div class="tiposViagens">
+      <h1 class="tituloViagens">Tipos de viagens</h1>
+
+      <div class="praias">
+        <h4 class="tituloPraia">Praias</h4>
+        <div class="conteudoPraias">
+          <img class="imagemPraia" src="img/praias.png" alt="foto praia" />
+          <p class="textoPraia">
+            As viagens à praia oferecem uma fuga revigorante para a mente, o
+            corpo e a alma. O som calmante das ondas, a brisa suave e o sol
+            radiante têm o poder de restaurar e rejuvenescer. Além de
+            proporcionar relaxamento, a praia é um convite para atividades
+            revigorantes, como caminhadas à beira-mar, mergulho refrescante e
+            esportes aquáticos emocionantes. A conexão com a natureza e a
+            serenidade do ambiente praiano ajudam a reduzir o estresse, promovem
+            a saúde mental e física, além de oferecer um cenário ideal para
+            descansar e recarregar as energias.
+          </p>
+        </div>
+      </div>
+
+      <div class="turisticos">
+        <h4 class="tituloTuristicos">Viagens turísticas</h4>
+        <div class="conteudoTuristicos">
+          <img
+            class="imagemTuristicos"
+            src="img/turisticos.png"
+            alt="foto pontos turisticos"
+          />
+          <p class="textoTuristicos">
+            Viagens turísticas proporcionam uma oportunidade única de explorar
+            novas culturas, paisagens e experiências, enriquecendo a vida das
+            pessoas. Essas jornadas permitem a ampliação de horizontes, o
+            conhecimento de tradições locais, a apreciação da diversidade e a
+            redução do estresse. Além disso, contribuem para o crescimento
+            pessoal, a abertura para perspectivas diferentes e o
+            rejuvenescimento, ao permitir a conexão com o mundo e consigo mesmo.
+          </p>
+        </div>
+      </div>
+
+    <div class="negocios">
+        <h4 class="tituloNegocios">À negócios</h4>
+        <div class="conteudoNegocios">
+          <img
+            class="imagemNegocios"src="img/negocios.png"alt="foto negocios"/>
+          <p class="textoNegocios">
+            Viagens a negócios são essenciais para facilitar reuniões, negociações e interações pessoais entre profissionais e parceiros comerciais. Essas viagens promovem o estabelecimento de relações sólidas, a troca de ideias e a busca por oportunidades de negócios, contribuindo para o crescimento e a expansão das empresas.
+          </p>
+        </div>
+      </div>
+
+    
+    <div class="familia">
+      <h4 class="tituloFamilia">Em família</h4>
+      <div class="conteudoFamilia">
+        <img
+          class="imagemFamilia"src="img/familia.png"alt="foto em familia"/>
+        <p class="textoFamilia">
+          Viajar em família é uma experiência enriquecedora, repleta de momentos de conexão e compartilhamento. Essas jornadas proporcionam a oportunidade de criar memórias duradouras, fortalecer laços afetivos e desfrutar de momentos únicos juntos. É um momento para explorar novos destinos, descobrir culturas diferentes e vivenciar aventuras, promovendo laços mais fortes e inesquecíveis entre os membros da família.
+        </p>
+      </div>
+    </div>
+  
+
+  <div class="radical">
+    <h4 class="tituloRadical">Radicais</h4>
+    <div class="conteudoRadical">
+      <img
+        class="imagemRadical"src="img/radical.png"alt="foto radicais"/>
+      <p class="textoRadical">
+        As viagens radicais são uma imersão no mundo da adrenalina e da aventura. São jornadas destinadas a aqueles que buscam experiências extremas, desafiando limites e explorando novas sensações. Essas aventuras incluem atividades como bungee jumping, paraquedismo, escaladas em montanhas imponentes e mergulhos em locais remotos. Para os amantes de emoções fortes, essas viagens representam uma oportunidade única de superar medos, sentir a vibração da aventura e criar memórias inesquecíveis em ambientes desafiadores.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="beneficiosViagens">
+
+    <h1 class="tituloBeneficios">Benefícios das viagens</h1>
+
+    <div class="imagens">
+
+      <img src="img/estresse.png" alt="" class="img1">
+      <img src="img/criatividade.png" alt="" class="img2">
+      <img src="img/networking.png" alt="" class="img3">
+      <img src="img/conhecimento.png" alt="" class="img4">
+
+    </div>
+    <div class="tituloImagens">
+
+      <h4> Reduz estresse </h4>
+      <h4> Aumenta a criatividade </h4>
+      <h4> Networking </h4>
+      <h4> Conhecer novas<Br> culturas, línguas<Br> e gastrônomias </h4>
+
+    </div>
+  </div>
+
+
+  <div class="historia" id="historia">
+
+    <h1 class="tituloHistoria">Sobre mim</h1>
+
+    <div class="lados">
+    <div class="lado1">
+
+      <p class="texto1">Olá, viajantes! Eu sou o travel.me, fui criado por um aluno da Sptech com a finalidade de relembrar momentos únicos em nossas vidas. Desde a infância, sempre fui fascinado em viajar, pelas diversas sensações que essa aventura nos proporciona, desde o momento de escolher o destino até vivenciar cada experiência. </b></p>
+
+    </div>
+    <div class="lado2">
+
+      <img src="img/navegacoes.png" alt="">
+    </div>
+  </div>
+  </div>
+  
+  <div class="plataforma">
+    <h1 class= "tituloPlataforma">Plataforma</h1>
+
+    <div class="conteudoPlataforma">
+    <p class="textoPlataforma">O travel.me foi criado com a finalidade de preservar memórias de viagens, garantindo que não se percam no esquecimento. Todas as jornadas têm seu valor e são empreendidas com objetivos específicos. Essa plataforma foi projetada para abrigar imagens, documentos e relatos sobre cada uma dessas experiências únicas.</p>
+
+    <img src="" alt="">
+    <!-- <img src="img/fotoplataforma .png" alt="Foto plataforma"> -->
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container-footer">
+      <div class="contateNos">
+        <p class="tituloContatenos">Contate-nos</p>
+        <ul class="ul_Contatenos">
+          <li><a href="">+55 11 97124-8838</a></li>
+          <li><a href="">caue.ghelfi@sptech.school</a></li>
+          <li><a href="">Rua haddock lobo 595</a></li>
+        </ul>
+      </div>
+      <div class="NossoServicos">
+        <p>Nossos serviços</p>
+        <ul class="ul_nossosServicos">
+          <li><a href="">Home</a></li>
+          <li><a href="">Sobre mim</a></li>
+          <li><a href="">Plataforma</a></li>
+        </ul>
+        </div>
+        <div class="linkRapido">
+        <p>Link rápido</p>
+        <ul class="ul_linkrapido">
+          <li><a href="">Contato</a></li>
+          <li><a href="">Suporte</a></li>
+          <li><a href="">FAQ</a></li>
+        </ul>
+        </div>
+
+        <div class="travelFooter">
+
+          <!-- <img class="logoFooter" src="img/logoFooter.svg" alt=""> -->
+          <h1 class="tituloTravelFooter" style="text-align: center;">Travel.me </h1>
+          <div class="iconesFooter">
+          <a href=""><i class='bx bxl-instagram'></i></a>
+          <a href=""><i class='bx bxl-linkedin-square'></i></a>
+          <a href=""><i class='bx bxl-github'></i></a>
+          </div>
+
+            
+        </div>
+      </div>
+      <p class="desenvolvidoText">©  Desenvolvido por Cauê Ghelfi</p>
+    </div>
+
+
+
+
+
+  </body>
+</html>

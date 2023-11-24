@@ -1,0 +1,520 @@
+:root{
+
+  --font-texto:  'Fira Sans', sans-serif;;
+  --font-titulo: 'Fira Sans', sans-serif;;
+  --color-azulEscuro: #204051;
+  --color-verde: #006400;
+  
+  }
+  
+
+* {
+  margin: 0;
+  paddin: 0;
+}
+body {
+  box-sizing: border-box;
+}
+.background {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/fotoFundo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header {
+  /* background-color: black; */
+  width: 100%;
+  position: fixed;
+  background: rgb(3,166,166);
+  background: radial-gradient(circle, rgba(3,166,166,1) 0%, rgba(3,120,150,1) 89%);
+  height: 80px;
+  padding: 20px 0;
+}
+.header .container {
+  height: 100%;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+
+}
+.header ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+.header .container li {
+  display: inline;
+  padding: 30px;
+  /* justify-content: space-between; */
+
+}
+
+.header .container a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: var(--font-titulo);
+  font-weight: 400;
+
+}
+
+
+.botoes .botao1 {
+  border: 1px solid #bababa;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 168px;
+  height: 33px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-titulo);
+  font-weight: 400;
+}
+.botoes .botao2 {
+  border: 1px solid #bababa;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 168px;
+  height: 33px;
+  font-size: 21px;
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-titulo);
+  font-weight: 400;
+}
+.botoes .botao1:hover {
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.botoes .botao2:hover {
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.background .conteudoInicio {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+  gap: 5px;
+  /* margin-top: 20px; */
+}
+
+.background .conteudoInicio .inicialTitulo {
+  font-size: 70px;
+  font-family: var(--font-titulo);
+  font-weight: bold;
+  margin-top: 300px;
+  background-color:rgb(3,166,166); ;
+}
+.background .conteudoInicio .botaoInicial {
+  background-color: orangered;
+  border: 3px solid #bababa;
+  border-radius: 50px;
+  width: 208px;
+  height: 43px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  opacity: 79%;
+  /* box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px; */
+}
+.background .conteudoInicio .botaoInicial a{
+  text-decoration: none;
+  color:white;
+  /* padding: 2px; */
+  text-align: center;
+  /* font-family: 'Playfair Display', serif; */
+
+}
+
+.background .conteudoInicio .botaoInicial:hover {
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  width: 218px;
+  height: 53px;
+  opacity: 100%;
+}
+
+.background .conteudoInicio .textoInicio {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: var(--font-titulo);
+
+  background-color:rgb(3,166,166); ;
+
+}
+
+.tiposViagens .tituloViagens {
+  color: #204051;
+  font-size: 70px;
+  text-align: center;
+  padding: 20px;
+  font-family: var(--font-titulo);
+  font-weight: bold;
+}
+
+.tiposViagens .tituloPraia{
+
+    color:#006400;
+    font-size:40px;
+    font-family: var(--font-titulo);
+    font-weight: 400;
+    margin-left: 190px;
+
+}
+
+.conteudoPraias{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-weight: 500;
+    font-family: var(--font-titulo);
+    font-weight: 300;
+}
+.conteudoPraias .imagemPraia{
+
+    margin-left: 103px;
+    margin-top: 20px;
+
+}
+
+.conteudoPraias .textoPraia{
+    text-align: justify;
+    width: 850px;
+    height:270px;
+    font-size:25px;
+    color:#204051;
+    margin-top: 60px;
+}
+
+.tiposViagens .tituloTuristicos{
+
+    color:#006400;
+    font-size:40px;
+    font-family: var(--font-titulo);
+    font-weight: 400;
+    text-align: end;
+    margin-right:120px ;
+    margin-top: 30px;
+
+}   
+.conteudoTuristicos{
+
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 40px;
+
+}
+.conteudoTuristicos .imagemTuristicos{
+    margin-right: 103px;
+    margin-top: 20px;
+}
+
+.conteudoTuristicos .textoTuristicos{
+    text-align: justify;
+    width: 850px;
+    height:270px;
+    font-size:25px;
+    color:#204051;
+    margin-top: 60px;
+    font-weight: 500;
+    font-family: var(--font-titulo);
+    font-weight: 300;
+}
+.tiposViagens .tituloNegocios{
+
+    color:#006400;
+    font-size:40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    margin-left: 170px;
+    font-family: var(--font-titulo);
+
+}  
+.conteudoNegocios{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.conteudoNegocios .imagemNegocios{
+
+    margin-left: 103px;
+    margin-top: 20px;
+
+}
+.conteudoNegocios .textoNegocios{
+    text-align: justify;
+    width: 850px;
+    height:270px;
+    font-size:25px;
+    color:#204051;
+    margin-top: 90px;
+    font-family: var(--font-titulo);
+    font-weight: 300;
+}
+.tituloFamilia{
+
+  color:#006400;
+  font-size:40px;
+  font-weight: 400;
+  text-align: end;
+  margin-right:120px ;
+  font-family: var(--font-titulo);
+
+}   
+.conteudoFamilia{
+
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 40px;
+
+}
+.conteudoFamilia .imagemFamilia{
+  margin-right: 103px;
+  margin-top: 20px;
+}
+
+.conteudoFamilia .textoFamilia{
+  text-align: justify;
+  width: 850px;
+  height:270px;
+  font-size:25px;
+  color:#204051;
+  margin-top: 60px;
+
+  font-family: var(--font-titulo);
+  font-weight: 300;
+}
+.tituloRadical{
+
+  color:#006400;
+  font-size:40px;
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  margin-left: 170px;
+  
+
+}  
+.conteudoRadical{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.conteudoRadical .imagemRadical{
+
+  margin-left: 103px;
+  margin-top: 20px;
+
+}
+.conteudoRadical .textoRadical{
+  text-align: justify;
+  width: 850px;
+  height:270px;
+  font-size:25px;
+  color:#204051;
+  margin-top: 90px;
+  margin-bottom: 40px;
+  font-family: var(--font-titulo);
+  font-weight: 300;
+}
+.tituloBeneficios {
+  color: #204051;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px;
+  font-family: var(--font-titulo);
+}
+.beneficiosViagens .imagens{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px;
+  
+  /* border: 2px solid #204051; */
+
+}
+
+.beneficiosViagens .tituloImagens{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color:#204051;
+  font-size: 26px;
+  /* padding:60px; */
+  /* gap: 5px; */
+  font-weight: 400;
+  font-family: var(--font-titulo);
+
+
+}
+
+.historia .tituloHistoria{
+
+  color: #204051;
+  font-size: 70px;
+  text-align: center;
+  padding: 30px;
+  font-family: var(--font-titulo);
+  font-weight: 400;
+
+}
+
+.historia .lado1{
+
+  width: 50%;
+  padding: 50px;
+  gap: 30px;
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
+  
+
+}
+
+.historia .texto1{
+
+  font-size: 26px;
+  font-family: var(--font-titulo);
+  font-weight: 300;
+  color: #204051;
+  text-align: left;
+
+}
+.historia .imagemL1{
+
+  width: 401px;
+  height: 382px;
+  margin-top: 50px;
+  margin-left: 125px;
+}
+
+.historia .lados{
+
+display: flex;
+
+}
+
+.plataforma .tituloPlataforma{
+
+  color: #204051;
+  font-size: 70px;
+  font-weight: 400;
+  text-align: center;
+  padding: 30px;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: var(--font-titulo);
+
+}
+
+.plataforma .conteudoPlataforma{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.plataforma .textoPlataforma{
+
+  font-size:26px;
+  font-family: var(--font-titulo);
+  font-weight: 300;
+  text-align: left;
+  color:#204051;
+  margin-left: 150px;
+
+}
+
+.footer{
+
+  width: 100%; 
+  background: rgb(3,109,136);
+background: linear-gradient(90deg, rgba(3,109,136,1) 11%, rgba(2,72,115,1) 100%, rgba(3,115,140,1) 100%);
+
+}
+
+.footer .container-footer{
+
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer .container-footer a{
+
+  text-decoration: none;
+  color:white;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.container-footer .titulosFooter {
+
+  display:flex;
+  justify-content: space-between;
+}
+
+.container-footer ul{
+padding: 0;
+  margin-top: 10px;
+  /* gap: 5px; */
+  color: #bababa;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  list-style: none;
+}
+
+.container-footer p{
+  font-size: 26px;
+  color: #bababa;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.travelFooter .tituloTravelFooter{
+
+  color: #bababa;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 30px;
+
+}
+
+.iconesFooter{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 40px;
+  
+}
+
+.iconesFooter .bx{
+
+  font-size: 40px;
+
+}
+
+.desenvolvidoText{
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 18px;
+}
+
+
+
+

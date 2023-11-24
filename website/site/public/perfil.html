@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Wix+Madefor+Display&display=swap" rel="stylesheet">
+    <script src="./js/validarSessao.js"></script>
+</head>
+  <body onload="validarSessao()">
+    <div class="header">
+      <div class="container">
+        <a href="" target="blank"
+          ><img src="img/logo.svg" alt="logo travel.me" style="width: 50"
+        /></a>
+        <div class="navbar">
+          <button id="idHome" class="segundoBotao" onclick="inicio()">
+            <i class="bx bx-home"></i>Página inicial
+          </button>
+          <!-- <li><a href="">Minhas viagens</a></li> -->
+          <button id="idMensagens" class="segundoBotao" onclick="mensagens()">
+            <i class="bx bxs-message"></i>Minhas viagens
+          </button>
+          <a href="index.html"> Sair <i class="bx bx-log-out"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="containerMeio">
+      <div class="menuEsquerdo">
+        <div class="headerIMG">
+          <img class="imgUser" src="img/userPerfil.png" alt="" />
+          <!-- <h1 class="tituloHeader">Cauê Ghelfi</h1> -->
+          <h1 class="tituloHeader">Olá, <span id="bUsuario">usuário</span>!</h1>
+
+          <hr />
+        </div>
+        <div class="botoes">
+          <button id="idDados" class="primeiroBotao" onclick="perfil()">
+            <i class="bx bx-cog"></i> Meu dados
+          </button>
+          <button id="idNotas" class="terceiroBotao" onclick="melhores()">
+            <i class="bx bx-trophy"></i>Melhores notas
+          </button>
+          <button id="idDash" class="quartoBotao" onclick="dashs()">
+            <i class="bx bx-bar-chart"></i>Dashboards
+          </button>
+          <button id="idViagens" class="quartoBotao" onclick="novaViagem()">
+            <i class='bx bx-briefcase-alt'></i>Nova viagem
+          </button>
+        </div>
+      </div>
+
+      <div class="conteudoMeio" id="meuDados" style="display: none">
+        <div class="dados">
+          <div class="headerConteudo">
+            <div class="headerMeio">
+              <h1 class="tituloHeaderMeio">Meus dados</h1>
+            </div>
+          </div>
+
+          <div class="usuario">
+            <img src="img/userPerfil.png" class="imgUserDados" alt="" />
+            <h3 class="nome-usuario">Cauê Ghelfi</h3>
+          </div>
+          <div class="perfilDados" id="perfil-dados">
+            <div class="informacoes-usuario">
+              <div class="id flex">
+                <p class="titulo-usuario">ID perfil</p>
+                <p class="conteudo">01232065</p>
+              </div>
+              <div class="nome flex">
+                <p class="titulo-usuario">Nome</p>
+                <p class="conteudo">Cauê Ghelfi</p>
+              </div>
+              <div class="cpf flex">
+                <p class="titulo-usuario">CPF</p>
+                <p class="conteudo">******-13</p>
+              </div>
+              <div class="email flex">
+                <p class="titulo-usuario">Email</p>
+                <p class="conteudo">exemplo@exemplo.com</p>
+              </div>
+              <div class="senha flex">
+                <p class="titulo-usuario">Senha</p>
+                <p class="conteudo">*********</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conteudoMeio2" id="mensagem" style="display: none">
+        <div class="headerViagens">
+          <div class="minhasViagens">
+            <h1 class="tituloMinhasViagens">Minhas viagens</h1>
+          </div>
+        </div>
+        <div class="etapas">
+          <div class="boxMeio">
+            <img class="box1IMG" src="img/box1IMG.webp" alt="" />
+            <h2 class="tituloBox">Paraty</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+              similique inventore debitis? Labore, totam mollitia sunt fuga
+              reprehenderit earum suscipit sed ducimus, at, molestiae eligendi
+              deserunt unde nobis nesciunt iusto.
+            </p>
+            <br />
+            <div class="infoBx">
+              <div class="local">
+                <i class="bx bxs-pin"></i>
+                <p>Rio de janeiro</p>
+              </div>
+              <div class="data">
+                <i class="bx bx-calendar"></i>
+                <p>06/09/2021</p>
+              </div>
+            </div>
+            <br />
+            <div class="notasbx1">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+          </div>
+          <div class="boxMeio">
+            <img class="box2IMG" src="img/box2IMG.jfif" alt="" />
+            <h2 class="tituloBox">Olímpia</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+              similique inventore debitis? Labore, totam mollitia sunt fuga
+              reprehenderit earum suscipit sed ducimus, at, molestiae eligendi
+              deserunt unde nobis nesciunt iusto.
+            </p>
+            <br />
+            <div class="infoBx">
+              <div class="local">
+                <i class="bx bxs-pin"></i>
+                <p>São Paulo</p>
+              </div>
+              <div class="data">
+                <i class="bx bx-calendar"></i>
+                <p>21/04/2023</p>
+              </div>
+            </div>
+            <br />
+            <div class="notasbx1">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="etapas">
+          <div class="boxMeio">
+            <img class="box3IMG" src="img/box3IMG.jfif" alt="" />
+            <h2 class="tituloBox">Taubaté</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+              similique inventore debitis? Labore, totam mollitia sunt fuga
+              reprehenderit earum suscipit sed ducimus, at, molestiae eligendi
+              deserunt unde nobis nesciunt iusto.
+            </p>
+            <br />
+            <div class="infoBx">
+              <div class="local">
+                <i class="bx bxs-pin"></i>
+                <p>São Paulo</p>
+              </div>
+              <div class="data">
+                <i class="bx bx-calendar"></i>
+                <p>01/07/2023</p>
+              </div>
+            </div>
+            <br />
+            <div class="notasbx1">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      <div class="paginaInicial" id="inicial" style="display: none;">
+        <div class="containerIncial">
+        <div class="msg1">
+          <h1>Ubatuba</h1>
+
+          <div class="conteudoMSG1">
+            <img src="img/ubatuba.jfif" class="monaco" alt="" />
+            <p class="textos">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              repellat necessitatibus atque accusantium neque hic deserunt eaque
+              eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+              ea aut perferendis!
+            </p>
+          </div>
+          <div class="infosMSG1">
+            <div class="user">
+              <img src="img/user1.png" class="user1" alt="">
+              <p>Gabriela Ghelfi</p>
+      </div>
+              <div class="local">
+              <i class="bx bxs-pin"></i>
+              <p>São Paulo</p>
+            </div>
+            <div class="data">
+              <i class="bx bx-calendar"></i>
+              <p>21/04/2023</p>
+            </div>
+          </div>
+       
+            
+          </div>
+          <div class="msg1">
+            <h1>Guarujá</h1>
+  
+            <div class="conteudoMSG1">
+              <img src="img/guaruja.jfif" class="monaco" alt="" />
+              <p class="textos">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                repellat necessitatibus atque accusantium neque hic deserunt eaque
+                eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+                ea aut perferendis!
+              </p>
+            </div>
+            <div class="infosMSG1">
+              <div class="user">
+                <img src="img/user1.png" class="user1" alt="">
+                <p>Luana Flausino</p>
+        </div>
+                <div class="local">
+                <i class="bx bxs-pin"></i>
+                <p>São Paulo</p>
+              </div>
+              <div class="data">
+                <i class="bx bx-calendar"></i>
+                <p>21/04/2023</p>
+              </div>
+            </div>
+         
+              
+            </div>
+            <div class="msg1">
+              <h1>Praia da feiticeira - Ilha Bela </h1>
+    
+              <div class="conteudoMSG1">
+                <img src="img/ilhabela.webp" class="monaco" alt="" />
+                <p class="textos">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                  repellat necessitatibus atque accusantium neque hic deserunt eaque
+                  eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+                  ea aut perferendis!
+                </p>
+              </div>
+              <div class="infosMSG1">
+                <div class="user">
+                  <img src="img/user1.png" class="user1" alt="">
+                  <p>Antonio Carlos</p>
+          </div>
+                  <div class="local">
+                  <i class="bx bxs-pin"></i>
+                  <p>São Paulo</p>
+                </div>
+                <div class="data">
+                  <i class="bx bx-calendar"></i>
+                  <p>21/04/2023</p>
+                </div>
+              </div>
+           
+                
+              </div>
+              
+              <div class="msg1">
+                <h1>Paraquedismo</h1>
+      
+                <div class="conteudoMSG1">
+                  <img src="img/paraquedas.jfif" class="monaco" alt="" />
+                  <p class="textos">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                    repellat necessitatibus atque accusantium neque hic deserunt eaque
+                    eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+                    ea aut perferendis!
+                  </p>
+                </div>
+                <div class="infosMSG1">
+                  <div class="user">
+                    <img src="img/user1.png" class="user1" alt="">
+                    <p>Luana Flausino</p>
+            </div>
+                    <div class="local">
+                    <i class="bx bxs-pin"></i>
+                    <p>Boituva</p>
+                  </div>
+                  <div class="data">
+                    <i class="bx bx-calendar"></i>
+                    <p>21/04/2023</p>
+                  </div>
+                </div>
+             
+                  
+                </div>
+                <div class="msg1">
+                  <h1>Thermas dos laranjais</h1>
+        
+                  <div class="conteudoMSG1">
+                    <img src="img/thermas.jpg" class="monaco" alt="" />
+                    <p class="textos">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                      repellat necessitatibus atque accusantium neque hic deserunt eaque
+                      eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+                      ea aut perferendis!
+                    </p>
+                  </div>
+                  <div class="infosMSG1">
+                    <div class="user">
+                      <img src="img/user1.png" class="user1" alt="">
+                      <p>Luana Flausino</p>
+              </div>
+                      <div class="local">
+                      <i class="bx bxs-pin"></i>
+                      <p>Olímpia</p>
+                    </div>
+                    <div class="data">
+                      <i class="bx bx-calendar"></i>
+                      <p>21/04/2023</p>
+                    </div>
+                  </div>
+               
+                    
+                  </div>
+                  <div class="msg1">
+                    <h1>Trilha caminhos do mar</h1>
+          
+                    <div class="conteudoMSG1">
+                      <img src="img/trilha.webp" class="monaco" alt="" />
+                      <p class="textos">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                        repellat necessitatibus atque accusantium neque hic deserunt eaque
+                        eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+                        ea aut perferendis!
+                      </p>
+                    </div>
+                    <div class="infosMSG1">
+                      <div class="user">
+                        <img src="img/user1.png" class="user1" alt="">
+                        <p>Luana Flausino</p>
+                </div>
+                        <div class="local">
+                        <i class="bx bxs-pin"></i>
+                        <p>São Bernardo do Campo - Cubatão</p>
+                      </div>
+                      <div class="data">
+                        <i class="bx bx-calendar"></i>
+                        <p>21/04/2023</p>
+                      </div>
+                    </div>
+                 
+                      
+                    </div>
+          
+        
+                  </div>
+      </div>
+
+      <div class="novaViagem" id="id_novaViagem">
+
+
+        <div class="boxMeioCadastro" id="boxMeioCadastro">
+
+
+          <h1 class="tituloMeio">Próxima viagem:</h1>
+          <br><br>
+
+
+          <div class="div-form">
+            <form id="form_postagem" method="post">
+                <label>
+                  <p class="textoMeio">Título:</p>
+                    <br>
+                    <input name="titulo" id="titulo" maxlength="100" type="text" class="ipt_mensagem">
+                </label>
+                <br><br>
+                
+                <label>
+                    <p class="textoMeio">
+                      Descrição (máximo de 250 caracteres):
+                    </p>
+                    <br><br>
+                    <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" class="ipt_area" ></textarea>
+                </label>
+                <br>
+                <div class="local">
+                  <i class="bx bxs-pin"></i>
+                  <p>Insira o destino:</p>
+                  <input type="text" class="ipt_Destino" id="id_destino" />
+                </div>
+                <br>
+                <div class="data">
+                  <i class="bx bx-calendar"></i>
+                  <p>Insira a data da viagem:</p>
+                  <input type="date" class="ipt_Data" id="data"/>
+                </div>
+                <br><br>
+                <div class="notasbx1">
+                <div class="tipoViagem">
+                  <select name="" id="tipo" class="notas">
+                    <option value="0">Tipo da viagem</option>
+                    <option value="1">Radical</option>
+                    <option value="2">Negócios</option>
+                    <option value="3">Praias</option>
+                    <option value="4">Família</option>
+                    <option value="5">Turísticas</option>
+                  </select>
+                  </div>
+                  <br>
+            <select name="" id="avaliacao" class="notas">
+              <option value="0">Avalie sua viagem:</option>
+              <option value="1">Nota: 1</option>
+              <option value="2">Nota: 2</option>
+              <option value="3">Nota: 3</option>
+              <option value="4">Nota: 4</option>
+              <option value="5">Nota: 5</option>
+            </select>
+         <br>
+        
+        
+         <br>
+         <button class="cadastrarViagem" onclick="criarViagem(event)" >Enviar</button>
+        </div>
+      </form>
+      </div>
+
+        </div>
+      </div>
+  </body>
+</html>
+
+<script>
+  
+
+   
+  async function criarViagem(event){
+
+    event.preventDefault()
+
+    var tituloViagem = titulo.value;
+    var descricao = textarea_descricao.value;
+    var avaliacaoMensagem = avaliacao.value;
+    var localViagem = id_destino.value;
+    var dataViagem = data.value;
+    var tipoViagem = tipo.value;
+0
+    await fetch(`/criar/criarViagem`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          tituloViagemServer: titulo,
+          descricaoServer: descricao,
+          avaliacaoServer: avaliacaoMensagem,
+          localViagemServer: localViagem,
+          dataViagemServer: dataViagem,
+          tipoViagemServer:tipoViagem
+        }),
+      })
+        .then(res => {
+          console.log(res, 'resposta')
+          return res.json()
+        })
+        .then(data => {
+          console.log(data)
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+
+      return false;
+  }
+
+// b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+
+  function perfil() {
+    mensagem.style.display = "none";
+    meuDados.style.display = "block";
+    inicial.style.display = "none";
+  }
+  function mensagens() {
+    mensagem.style.display = "block";
+    meuDados.style.display = "none";
+    inicial.style.display = "none"
+  }
+  function inicio(){
+    mensagem.style.display = "none";
+    meuDados.style.display = "none";
+    inicial.style.display = "block";
+  }
+  function novaViagem(){
+
+    mensagem.style.display = "none"
+    meuDados.style.display = "none";
+    inicial.style.display = "none";
+    idnovaViagem.style.display = "block";
+  }
+  
+  // function limparFormulario() {
+  //       document.getElementById("form_postagem").reset();
+  //   }
+
+
+  //   function publicar() {
+  //       var idUsuario = sessionStorage.ID_USUARIO;
+  //       // // sessionStorage.NOME_USUARIO = json.nome;
+
+       
+
+  //       fetch(`/avisos/publicar/${idMensagem}`, {
+  //           method: "post",
+  //           headers: {
+  //               "Content-Type": "application/json"
+  //           },
+  //           body: JSON.stringify(corpo)
+  //       }).then(function (resposta) {
+
+  //           console.log("resposta: ", resposta);
+
+  //           if (resposta.ok) {
+  //               window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+  //               limparFormulario();
+  //               finalizarAguardar();
+  //           } else if (resposta.status == 404) {
+  //               window.alert("Deu 404!");
+  //           } else {
+  //               throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+  //           }
+  //       }).catch(function (resposta) {
+  //           console.log(`#ERRO: ${resposta}`);
+  //           finalizarAguardar();
+  //       });
+
+  //       return false;
+
+  // }
+  // function atualizarFeed() {
+  //       fetch("/avisos/listar").then(function (resposta) {
+  //           if (resposta.ok) {
+  //               if (resposta.status == 204) {
+  //                   var feed = document.getElementById("feed_container");
+  //                   var mensagem = document.createElement("span");
+  //                   mensagem.innerHTML = "Nenhum resultado encontrado."
+  //                   feed.appendChild(mensagem);
+  //                   throw "Nenhum resultado encontrado!!";
+  //               }
+
+  //               resposta.json().then(function (resposta) {
+  //                   console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+  //                   var feed = document.getElementById("feed_container");
+  //                   feed.innerHTML = "";
+  //                   for (let i = 0; i < resposta.length; i++) {
+  //                       var publicacao = resposta[i];
+
+  //                       // criando e manipulando elementos do HTML via JavaScript
+  //                       var divPublicacao = document.createElement("div");
+
+  //                       var spanID = document.createElement("span");
+  //                       var spanTitulo = document.createElement("span");
+  //                       var spanNome = document.createElement("span");
+  //                       var spanDescricao = document.createElement("span");
+  //                       var spanDestino = document.createElement("span");
+  //                       var spanTipo = document.createElement("span");
+  //                       var spanData = document.createElement("span");
+  //                       var spanAvaliacao = document.createElement("span");
+
+
+  //                       spanID.innerHTML = "ID: <b>" + publicacao.idMensagem + "</b>";
+  //                       spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
+  //                       spanNome.innerHTML = "Autor: <b>" + publicacao.titulo + "</b>";
+  //                       spanDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+  //                       spanDestino.innerHTML = "Destino: <b>" + publicacao.destino + "</b>";
+  //                       spanData.innerHTML = "Data: <b>" + publicacao.data + "</b>";
+  //                       spanAvaliacao.innerHTML ="Avaliacao: <b>" + publicacao.avaliacao + "</b"
+
+
+
+  //                       divPublicacao.className = "publicacao";
+  //                       spanTitulo.id = "inputNumero" + publicacao.idMensagem;
+  //                       spanNome.className = "publicacao-nome";
+  //                       spanTitulo.className = "publicacao-titulo";
+  //                       spanDescricao.className = "publicacao-descricao";
+  //                       spanDestino.className = "publicacao-destino";
+  //                       spanTipo.className = "publicacao-tipo";
+  //                       spanData.className= "publicacao-data";
+  //                       spanAvaliacao.className = "publicacao-avaliacao"
+
+  //                       divDescricao.className = "publicacao-descricao";
+
+  //                       divPublicacao.appendChild(spanID);
+  //                       divPublicacao.appendChild(spanNome);
+  //                       divPublicacao.appendChild(spanTitulo);
+  //                       divPublicacao.appendChild(spanDescricao);
+  //                       divPublicacao.appendChild(spanDestino);
+  //                       divPublicacao.appendChild(spanData);
+  //                       divPublicacao.appendChild(spanAvaliacao);
+  //                       feed.appendChild(divPublicacao);
+  //                   }
+
+  //                   finalizarAguardar();
+  //               });
+  //           } else {
+  //               throw ('Houve um erro na API!');
+  //           }
+  //       }).catch(function (resposta) {
+  //           console.error(resposta);
+  //           finalizarAguardar();
+  //       });
+  //   }
+
+
+
+
+</script>

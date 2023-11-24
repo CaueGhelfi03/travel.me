@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" href="../img/logo.svg">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <a href="" target="blank"><img src="img/logo.svg" alt="logo travel.me" style="width: 50"
+        /></a>
+        <div class="navbar">
+          <ul>
+            <li><a href="index.html">Página inicial</a></li>
+            <li><a href="index.html#tituloHistoria">Sobre mim</a></li>
+            <li><a href="">Contato</a></li>
+          </ul>
+        </div>
+        <div class="botoes">
+          <button class="botao1" onclick="cadastrar()"><a href="cadastro.html">Cadastrar-se</a></button>
+
+          <button class="botao2" onclick="entrar()"><a href="login.html">Entrar</a></button>
+        </div>
+        <div class="alerta_erro">
+          <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+          </div>
+      
+      </div>
+    </div>
+
+    <div class="containerMeio">
+        <div class="box-meio">
+            <i class='bx bxs-user-circle' ></i>
+            <h3 class="tituloLogin">Login</h3>
+
+
+            <div class="conteudo">
+                <div class="entrada1">
+                <i class='bx bx-envelope' ></i> <input type="text" class="input" placeholder="E-mail" id="id_email">
+                </div>
+                <p class="mensagemErro" id="erroEmail" style="display: none">
+                    E-mail inválido
+                  </p>
+            <div class="entrada2">
+                <i class='bx bx-lock-alt'></i><input type="password" class="input" placeholder="Senha" id="id_senha">
+            </div>
+            <p id="erroSenha" class="mensagemErro" style="display: none">
+                Senha inválida
+              </p>
+
+            </div>
+
+            <div class="conteudo2">
+                <div class="salvarSenha">
+                    <input type="checkbox" class="checkBoxSalvar" />
+                    <p class="checkBoxText">Salvar senha</p>
+                </div>
+                  <a href="" class="recupereSenha">Esqueceu a senha?</a>
+            </div>
+            <!-- <div class="botao"> -->
+
+                
+                <button class="botaoEntrar" onclick="entrar()">Entrar</button>
+                <div id="div_aguardar" class="loading-div">
+                  <img src="./img/loading.gif" id="loading-gif">
+              </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script>
+  function entrar() {
+    var email = id_email.value;
+    var senha = id_senha.value;
+    var possui_especial =
+      senha.indexOf("#") >= 0 ||
+      senha.indexOf("@") >= 0 ||
+      senha.indexOf("!") >= 0 ||
+      senha.indexOf("%") >= 0 ||
+      senha.indexOf("?") >= 0 ||
+      senha.indexOf("-") >= 0 ||
+      senha.indexOf("+") >= 0 ||
+      senha.indexOf("_") >= 0;
+
+    //Validando o email de Login//
+
+    if (
+      email.indexOf("@") >= 0 &&
+      (email.endsWith(".com") ||
+        email.endsWith(".br") ||
+        email.endsWith(".school"))
+    ) {
+      erroEmail.style.display = "none";
+    } else {
+      erroEmail.style.display = "block";
+      id_email.style.borderColor = "red";
+    }
+
+    if (
+      senha.length >= 8 &&
+      possui_especial &&
+      senha != senha.toUpperCase() &&
+      senha != senha.toLowerCase()
+    ) {
+      erroSenha.style.display = "none";
+    } else {
+      erroSenha.style.display = "block";
+      id_senha.style.borderColor = "red";
+    }
+    if (email == "" || senha == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+      console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nome;
+                    sessionStorage.ID_USUARIO = json[0].idUsuario;
+
+                    setTimeout(function () {
+                        window.location = "/perfil.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+  
+</script>
