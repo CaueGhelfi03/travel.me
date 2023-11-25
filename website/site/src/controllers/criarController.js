@@ -3,38 +3,33 @@ var criarModel = require("../models/criarModel");
 
 function criarViagem(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var titulo = req.body.tituloServer;
+    var tituloViagem = req.body.tituloViagemServer;
     var descricao = req.body.descricaoServer;
-    var avaliacao = req.body.avaliacaoServer;
-    var localViagem = req.body.localServer;
+    var avaliacaoViagem = req.body.avaliacaoViagemServer;
+    var localViagem = req.body.locaViagemServer;
     var dataViagem = req.body.dataViagemServer;
-    var tipo = req.body.tipoServer;
+    var tipoViagem = req.body.tipoViagemServer;
 
     // Faça as validações dos valores
-    if (titulo == undefined) {
-
-        return res.status(400).json({ msg: "Seu email está undefined!" })
-
+    if (tituloViagem == undefined) {
+        return res.status(400).json({ msg: "Seu titulo está undefined!" })
     } else if (descricao == undefined) {
-        return res.status(400).json({ msg: "Seu email está undefined!" })
-
-    }  else if (avaliacao == undefined) {
-        return res.status(400).json({ msg: "Seu email está undefined!" })
-
+        return res.status(400).json({ msg: "Seu descricao está undefined!" })
+    }  else if (avaliacaoViagem == undefined) {
+        return res.status(400).json({ msg: "Seu avaliacao está undefined!" })
     }  else if (localViagem == undefined) {
-        return res.status(400).json({ msg: "Seu email está undefined!" })
+        return res.status(400).json({ msg: "Seu local está undefined!" })
 
     }  else if (dataViagem == undefined) {
-        return res.status(400).json({ msg: "Seu email está undefined!" })
+        return res.status(400).json({ msg: "Seu data Viagem está undefined!" })
 
-    }  else if (tipo == undefined) {
-        return res.status(400).json({ msg: "Seu email está undefined!" })
-
+    }  else if (tipoViagem == undefined) {
+        return res.status(400).json({ msg: "Seu tipo da viagem está undefined!" })
     } 
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        criarModel.criarViagem(titulo, descricao, avaliacao, localViagem, dataViagem, tipo)
+        criarModel.criarViagem(tituloViagem, descricao, avaliacaoViagem, localViagem, dataViagem, tipoViagem)
             .then(
                 function (resultado) {
                     res.json(resultado);

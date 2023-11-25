@@ -1,0 +1,86 @@
+
+
+* {
+  margin: 0;
+  paddin: 0;
+}
+
+  .header {
+    width: 100%;
+    background: rgb(3,166,166);
+    background: radial-gradient(circle, rgba(3,166,166,1) 0%, rgba(3,120,150,1) 89%);
+    height: 80px;
+    padding: 20px 0;
+  }
+  .header .container {
+    height: 100%;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+  
+  }
+  .header ul {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .header .container li {
+    display: inline;
+    padding: 30px;
+    /* justify-content: space-between; */
+  
+  }
+  
+  .header .container a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+  
+  }
+.navbar{
+
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.botoes{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+
+}
+  
+  .botoes .botao1 {
+    border: 1px solid #bababa;
+    background-color: transparent;
+    border-radius: 20px;
+    width: 168px;
+    height: 33px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+  .botoes .botao2 {
+    border: 1px solid #bababa;
+    background-color: transparent;
+    border-radius: 20px;
+    width: 168px;
+    height: 33px;
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+  }
+  .botoes .botao1:hover {
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+  .botoes .botao2:hover {
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  } 

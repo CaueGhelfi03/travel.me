@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="icon" href="img/logo.svg">
     <link      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
@@ -476,6 +477,21 @@
     var localViagem = id_destino.value;
     var dataViagem = data.value;
     var tipoViagem = tipo.value;
+
+    if(tipoViagem == 1){
+      tipoViagem = 'Radical';
+    }else if(tipoViagem == 2){
+      tipoViagem = 'Negócios'
+    }else if(tipoViagem == 3){
+      tipoViagem == 'Praias';
+    }else if(tipoViagem == 4){
+      tipoViagem == 'Família'
+    }else{
+      tipoViagem == 'Turísticas'
+    } 
+  
+
+
 0
     await fetch(`/criar/criarViagem`, {
         method: "POST",
@@ -485,7 +501,7 @@
         body: JSON.stringify({
           // crie um atributo que recebe o valor recuperado aqui
           // Agora vá para o arquivo routes/usuario.js
-          tituloViagemServer: titulo,
+          tituloViagemServer: tituloViagem,
           descricaoServer: descricao,
           avaliacaoServer: avaliacaoMensagem,
           localViagemServer: localViagem,

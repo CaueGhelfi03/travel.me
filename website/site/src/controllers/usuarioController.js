@@ -46,16 +46,16 @@ function passo1Cadastro(req, res) {
 
     // Faça as validações dos valores
     if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+        res.status(400).send("Seu Nome está undefined!");
     } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
+        res.status(400).send("Seu Email está undefined!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Sua Senha está undefined!");
     }  else if (telefone == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Seu telefone está undefined!");
     }  else if (cpf == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    } 
+        res.status(400).send("Seu cpf está undefined!");
+    }
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js

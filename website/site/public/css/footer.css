@@ -1,0 +1,81 @@
+.footer{
+
+    width: 100%; 
+    background: rgb(3,109,136);
+  background: linear-gradient(90deg, rgba(3,109,136,1) 11%, rgba(2,72,115,1) 100%, rgba(3,115,140,1) 100%);
+  
+  }
+  
+  .footer .container-footer{
+  
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer .container-footer a{
+  
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+  
+  }
+  
+  .container-footer .titulosFooter {
+  
+    display:flex;
+    justify-content: space-between;
+  }
+  
+  .container-footer ul{
+  padding: 0;
+    margin-top: 10px;
+    /* gap: 5px; */
+    color: #bababa;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    list-style: none;
+  }
+  
+  .container-footer p{
+    font-size: 26px;
+    color: #bababa;
+    font-family: Arial, Helvetica, sans-serif;
+  
+  }
+  
+  .travelFooter .tituloTravelFooter{
+  
+    color: #bababa;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 30px;
+  
+  }
+  
+  .iconesFooter{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 40px;
+    
+  }
+  
+  .iconesFooter .bx{
+  
+    font-size: 40px;
+  
+  }
+
+  .desenvolvidoText{
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  

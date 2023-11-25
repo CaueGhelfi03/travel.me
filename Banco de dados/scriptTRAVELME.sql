@@ -1,14 +1,15 @@
-create database travelme;
+ create database travelme;
 use travelme;
 
 create table usuario(
 	idUsuario int auto_increment primary key,
 	nome varchar(45),
-	sobrenome varchar(45),
     senha varchar(30),
     email varchar(90) UNIQUE,
     cpf varchar(11),
     telefone varchar(11),
+    fkEndereco int,
+    constraint foreign key (fkEndereco) references endereco (idEndereco),
     constraint chkemail check (email LIKE  ( '%@%.%')));
 
 create table endereco(
@@ -18,9 +19,7 @@ create table endereco(
     unidadeFederativa varchar(2),
     cidade varchar(90),
     CEP varchar(8),
-    complemento varchar(20),
-	fkUsuario int,
-    constraint foreign key (fkUsuario) references usuario (idUsuario));
+    complemento varchar(20));
     
 create table mensagem(
 	idMensagem int auto_increment,
@@ -39,6 +38,11 @@ create table mensagem(
     select * from usuario;
     select * from mensagem;
     select * from endereco;
+    
+    
+        
+    
+    select * from usuario join endereco on fkUsuario = idUsuario;
     
     
     

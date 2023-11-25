@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/cadastro.css" />
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" href="img/logo.svg">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,18 +26,18 @@
           <ul>
             <li><a href="index.html">Página inicial</a></li>
             <li><a href="index.html#tituloHistoria">Sobre mim</a></li>
-            <li><a href="">Contato</a></li>
+            <!-- <li><a href="">Contato</a></li> -->
           </ul>
         </div>
         <div class="botoes">
           <button class="botao1" onclick="cadastrar()">Cadastrar-se</button>
 
-          <button class="botao2" onclick="entrar()">Entrar</button>
+          <button class="botao2" onclick="entrar()"><a href="login.html">Entrar</a></button>
        
         </div>
         <div class="alerta_erro">
           <div class="card_erro" id="cardErro">
-            <span id="mensagem_erro"></span>
+            <span id="mensagem_erro" class="mensagem_erro"></span>
           </div>
         </div>
       </div>
@@ -129,6 +132,52 @@
     </div>
     </div>
     </div>
+
+    <div class="footer">
+      <div class="container-footer">
+        <div class="contateNos">
+          <p class="tituloContatenos">Contate-nos</p>
+          <ul class="ul_Contatenos">
+            <li><a href="">+55 11 97124-8838</a></li>
+            <li><a href="">caue.ghelfi@sptech.school</a></li>
+            <li><a href="">Rua haddock lobo 595</a></li>
+          </ul>
+        </div>
+        <div class="NossoServicos">
+          <p>Nossos serviços</p>
+          <ul class="ul_nossosServicos">
+            <li><a href="">Home</a></li>
+            <li><a href="">Sobre mim</a></li>
+            <li><a href="">Plataforma</a></li>
+          </ul>
+          </div>
+          <div class="linkRapido">
+          <p>Link rápido</p>
+          <ul class="ul_linkrapido">
+            <li><a href="">Contato</a></li>
+            <li><a href="">Suporte</a></li>
+            <li><a href="">FAQ</a></li>
+          </ul>
+          </div>
+  
+          <div class="travelFooter">
+  
+            <!-- <img class="logoFooter" src="img/logoFooter.svg" alt=""> -->
+            <h1 class="tituloTravelFooter" style="text-align: center;">Travel.me </h1>
+            <div class="iconesFooter">
+            <a href=""><i class='bx bxl-instagram'></i></a>
+            <a href=""><i class='bx bxl-linkedin-square'></i></a>
+            <a href=""><i class='bx bxl-github'></i></a>
+            </div>
+  
+              
+          </div>
+        </div>
+        <p class="desenvolvidoText">©  Desenvolvido por Cauê Ghelfi</p>
+      </div>
+  
+
+
   </body>
 </html>
 <script>
@@ -230,10 +279,9 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+          
+          mensagem1();
 
-          mensagem_erro.innerHTML =
-            "Primeira etapa realizada com sucesso! Redirecionando para próxima etapa...";
 
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
@@ -311,4 +359,19 @@
     divBotao.style.flexDirection = "column";
 
   }
-</script>
+
+  function mensagem1(){
+  
+    cardErro.style.display = "block";
+
+mensagem_erro.innerHTML =
+  "Primeira etapa realizada com sucesso!...";
+
+  setTimeout(apagarMensagem1, 1000)
+  }
+  function apagarMensagem1(){
+    cardErro.style.display = 'none';
+  }
+  
+  
+  </script>

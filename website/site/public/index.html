@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel.me</title>
+    <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,22 +22,22 @@
     <div class="background">
       <div class="header">
         <div class="container">
-          <a href="index.html" 
+          <a href="" target="blank"
             ><img src="img/logo.svg" alt="logo travel.me" style="width: 50"
           /></a>
           <div class="navbar">
             <ul>
               <li><a href="index.html">Página inicial</a></li>
               <li><a href="index.html#historia">Sobre mim</a></li>
-              <li><a href="">Contato</a></li>
+              <!-- <li><a href="">Contato</a></li> -->
             </ul>
           </div>
           <div class="botoes">
             <button class="botao1" onclick="cadastrar()"><a href="cadastro.html">Cadastrar-se</a></button>
   
             <button class="botao2" onclick="entrar()"><a href="login.html">Entrar</a></button>
+         
           </div>
-        
         </div>
       </div>
 
@@ -42,7 +45,7 @@
         <h1 class="inicialTitulo">Olá, viajantes!</h1>
         <i><b class="textoInicio">Guarde suas lembranças conosco.</b></i>
         <br />
-        <button class="botaoInicial"><a href="#">Saiba mais</a></button>
+        <button class="botaoInicial"><a href="index.html#plataforma">Saiba mais</a></button>
       </div>
     </div>
 
@@ -163,7 +166,7 @@
   </div>
   </div>
   
-  <div class="plataforma">
+  <div class="plataforma" id="plataforma">
     <h1 class= "tituloPlataforma">Plataforma</h1>
 
     <div class="conteudoPlataforma">
