@@ -24,6 +24,7 @@ create table endereco(
 create table mensagem(
 	idMensagem int auto_increment,
 	fkUsuario int,
+    imagem varchar(255),
     titulo varchar (90),
 	descricao varchar(255),
 	avaliacao int,
@@ -34,13 +35,14 @@ create table mensagem(
     primary key (idMensagem,fkUsuario));
     
     
+    
 	INSERT INTO usuario (nome, email, senha, cpf,telefone) VALUES ('Caue Ghelfi', 'caueghelfi@sptech.school', 'ghelfinho', '12345678912', '11971248838');
     select * from usuario;
     select * from mensagem;
     select * from endereco;
     
     
-        
+select usuario.nome as 'Nome_usuario' , count(mensagem.fkUsuario) as 'Quantidade_viagens'  from usuario left join mensagem on mensagem.fkUsuario = usuario.idUsuario where fkUsuario = idUsuario group by usuario.nome;
     
     select * from usuario join endereco on fkUsuario = idUsuario;
     

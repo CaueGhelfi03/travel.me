@@ -1,215 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/perfil.css" />
-    <link rel="icon" href="img/logo.svg">
-    <link      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Wix+Madefor+Display&display=swap" rel="stylesheet">
-    <script src="./js/validarSessao.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/perfil.css" />
+  <link rel="icon" href="img/logo.svg">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Wix+Madefor+Display&display=swap"
+    rel="stylesheet">
+  <script src="./js/validarSessao.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
-  <body onload="validarSessao()">
-    <div class="header">
-      <div class="container">
-        <a href="" target="blank"
-          ><img src="img/logo.svg" alt="logo travel.me" style="width: 50"
-        /></a>
-        <div class="navbar">
-          <button id="idHome" class="segundoBotao" onclick="inicio()">
-            <i class="bx bx-home"></i>Página inicial
-          </button>
-          <!-- <li><a href="">Minhas viagens</a></li> -->
-          <button id="idMensagens" class="segundoBotao" onclick="mensagens()">
-            <i class="bx bxs-message"></i>Minhas viagens
-          </button>
-          <a href="index.html"> Sair <i class="bx bx-log-out"></i></a>
+
+<body onload="validarSessao(),atualizarFeed(),buscar(), obterDadosGrafico(),qtdViagens(), obterDadosGraficoUsuario()">
+  <div class="header">
+    <div class="container">
+      <a href="" target="blank"><img src="img/logo.svg" alt="logo travel.me" style="width: 50" /></a>
+      <div class="navbar">
+        <button id="idHome" class="segundoBotao" onclick="inicio()">
+          <i class="bx bx-home"></i>Página inicial
+        </button>
+        <button id="idMensagens" class="segundoBotao" onclick="mensagens()">
+          <i class="bx bxs-message"></i>Minhas viagens
+        </button>
+        <a href="index.html"> Sair <i class="bx bx-log-out"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="containerMeio">
+    <div class="menuEsquerdo">
+      <div class="headerIMG">
+        <img class="imgUser" src="img/userPerfil.png" alt="" />
+        <!-- <h1 class="tituloHeader">Cauê Ghelfi</h1> -->
+        <h1 class="tituloHeader">Olá, <span id="bUsuario"></span>!</h1>
+
+        <hr />
+      </div>
+      <div class="botoes">
+        <button id="idDados" class="primeiroBotao" onclick="perfil()">
+          <i class="bx bx-cog"></i> Meu dados
+        </button>
+        <button id="idDash" class="quartoBotao" onclick="dashs()">
+          <i class="bx bx-bar-chart"></i>Dashboards
+        </button>
+        <button id="idViagens" class="quartoBotao" onclick="novaViagem()">
+          <i class='bx bx-briefcase-alt'></i>Nova viagem
+        </button>
+      </div>
+    </div>
+
+    <div class="conteudoMeio" id="meuDados" style="display: none">
+      <div class="dados">
+        <div class="headerConteudo">
+          <div class="headerMeio">
+            <h1 class="tituloHeaderMeio">Meus dados</h1>
+          </div>
+        </div>
+
+        <div class="usuario">
+          <img src="img/userPerfil.png" class="imgUserDados" alt="" />
+        </div>
+        <div class="perfilDados" id="perfil-dados">
+          <div class="informacoes-usuario">
+            <div class="id flex">
+              <p class="titulo-usuario">ID perfil</p>
+              <span class="conteudo" id="idPerfil"></span>
+            </div>
+            <div class="nome flex">
+              <p class="titulo-usuario">Nome</p>
+              <span class="conteudo" id="idNome"></span>
+            </div>
+            <div class="cpf flex">
+              <p class="titulo-usuario">CPF</p>
+              <span class="conteudo" id="idCpf"></span>
+            </div>
+            <div class="email flex">
+              <p class="titulo-usuario">Email</p>
+              <span class="conteudo" id="idEmail"></span>
+            </div>
+            <div class="senha flex">
+              <p class="titulo-usuario">Senha</p>
+              <p class="conteudo">*********</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="containerMeio">
-      <div class="menuEsquerdo">
-        <div class="headerIMG">
-          <img class="imgUser" src="img/userPerfil.png" alt="" />
-          <!-- <h1 class="tituloHeader">Cauê Ghelfi</h1> -->
-          <h1 class="tituloHeader">Olá, <span id="bUsuario">usuário</span>!</h1>
-
-          <hr />
-        </div>
-        <div class="botoes">
-          <button id="idDados" class="primeiroBotao" onclick="perfil()">
-            <i class="bx bx-cog"></i> Meu dados
-          </button>
-          <button id="idNotas" class="terceiroBotao" onclick="melhores()">
-            <i class="bx bx-trophy"></i>Melhores notas
-          </button>
-          <button id="idDash" class="quartoBotao" onclick="dashs()">
-            <i class="bx bx-bar-chart"></i>Dashboards
-          </button>
-          <button id="idViagens" class="quartoBotao" onclick="novaViagem()">
-            <i class='bx bx-briefcase-alt'></i>Nova viagem
-          </button>
+    <div class="conteudoMeio2" id="mensagem" style="display: none">
+      <div class="headerViagens">
+        <div class="minhasViagens">
+          <h1 class="tituloMinhasViagens">Minhas viagens</h1>
         </div>
       </div>
+      <div class="containerEtapas" id="containerEtapas"></div>
 
-      <div class="conteudoMeio" id="meuDados" style="display: none">
-        <div class="dados">
-          <div class="headerConteudo">
-            <div class="headerMeio">
-              <h1 class="tituloHeaderMeio">Meus dados</h1>
-            </div>
-          </div>
-
-          <div class="usuario">
-            <img src="img/userPerfil.png" class="imgUserDados" alt="" />
-            <h3 class="nome-usuario">Cauê Ghelfi</h3>
-          </div>
-          <div class="perfilDados" id="perfil-dados">
-            <div class="informacoes-usuario">
-              <div class="id flex">
-                <p class="titulo-usuario">ID perfil</p>
-                <p class="conteudo">01232065</p>
-              </div>
-              <div class="nome flex">
-                <p class="titulo-usuario">Nome</p>
-                <p class="conteudo">Cauê Ghelfi</p>
-              </div>
-              <div class="cpf flex">
-                <p class="titulo-usuario">CPF</p>
-                <p class="conteudo">******-13</p>
-              </div>
-              <div class="email flex">
-                <p class="titulo-usuario">Email</p>
-                <p class="conteudo">exemplo@exemplo.com</p>
-              </div>
-              <div class="senha flex">
-                <p class="titulo-usuario">Senha</p>
-                <p class="conteudo">*********</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conteudoMeio2" id="mensagem" style="display: none">
-        <div class="headerViagens">
-          <div class="minhasViagens">
-            <h1 class="tituloMinhasViagens">Minhas viagens</h1>
-          </div>
-        </div>
-        <div class="etapas">
-          <div class="boxMeio">
-            <img class="box1IMG" src="img/box1IMG.webp" alt="" />
-            <h2 class="tituloBox">Paraty</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-              similique inventore debitis? Labore, totam mollitia sunt fuga
-              reprehenderit earum suscipit sed ducimus, at, molestiae eligendi
-              deserunt unde nobis nesciunt iusto.
-            </p>
-            <br />
-            <div class="infoBx">
-              <div class="local">
-                <i class="bx bxs-pin"></i>
-                <p>Rio de janeiro</p>
-              </div>
-              <div class="data">
-                <i class="bx bx-calendar"></i>
-                <p>06/09/2021</p>
-              </div>
-            </div>
-            <br />
-            <div class="notasbx1">
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bx-star"></i>
-            </div>
-          </div>
-          <div class="boxMeio">
-            <img class="box2IMG" src="img/box2IMG.jfif" alt="" />
-            <h2 class="tituloBox">Olímpia</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-              similique inventore debitis? Labore, totam mollitia sunt fuga
-              reprehenderit earum suscipit sed ducimus, at, molestiae eligendi
-              deserunt unde nobis nesciunt iusto.
-            </p>
-            <br />
-            <div class="infoBx">
-              <div class="local">
-                <i class="bx bxs-pin"></i>
-                <p>São Paulo</p>
-              </div>
-              <div class="data">
-                <i class="bx bx-calendar"></i>
-                <p>21/04/2023</p>
-              </div>
-            </div>
-            <br />
-            <div class="notasbx1">
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bx-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="etapas">
-          <div class="boxMeio">
-            <img class="box3IMG" src="img/box3IMG.jfif" alt="" />
-            <h2 class="tituloBox">Taubaté</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-              similique inventore debitis? Labore, totam mollitia sunt fuga
-              reprehenderit earum suscipit sed ducimus, at, molestiae eligendi
-              deserunt unde nobis nesciunt iusto.
-            </p>
-            <br />
-            <div class="infoBx">
-              <div class="local">
-                <i class="bx bxs-pin"></i>
-                <p>São Paulo</p>
-              </div>
-              <div class="data">
-                <i class="bx bx-calendar"></i>
-                <p>01/07/2023</p>
-              </div>
-            </div>
-            <br />
-            <div class="notasbx1">
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bx-star"></i>
-            </div>
-          </div>
-  
-        </div>
-      </div>
-      <div class="paginaInicial" id="inicial" style="display: none;">
-        <div class="containerIncial">
+    </div>
+    <div class="paginaInicial" id="inicial" style="display: none;">
+      <div class="containerIncial">
         <div class="msg1">
           <h1>Ubatuba</h1>
 
@@ -226,8 +131,8 @@
             <div class="user">
               <img src="img/user1.png" class="user1" alt="">
               <p>Gabriela Ghelfi</p>
-      </div>
-              <div class="local">
+            </div>
+            <div class="local">
               <i class="bx bxs-pin"></i>
               <p>São Paulo</p>
             </div>
@@ -236,294 +141,271 @@
               <p>21/04/2023</p>
             </div>
           </div>
-       
-            
+
+
+        </div>
+        <div class="msg1">
+          <h1>Guarujá</h1>
+
+          <div class="conteudoMSG1">
+            <img src="img/guaruja.jfif" class="monaco" alt="" />
+            <p class="textos">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              repellat necessitatibus atque accusantium neque hic deserunt eaque
+              eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+              ea aut perferendis!
+            </p>
           </div>
-          <div class="msg1">
-            <h1>Guarujá</h1>
-  
-            <div class="conteudoMSG1">
-              <img src="img/guaruja.jfif" class="monaco" alt="" />
-              <p class="textos">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                repellat necessitatibus atque accusantium neque hic deserunt eaque
-                eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
-                ea aut perferendis!
+          <div class="infosMSG1">
+            <div class="user">
+              <img src="img/user1.png" class="user1" alt="">
+              <p>Luana Flausino</p>
+            </div>
+            <div class="local">
+              <i class="bx bxs-pin"></i>
+              <p>São Paulo</p>
+            </div>
+            <div class="data">
+              <i class="bx bx-calendar"></i>
+              <p>21/04/2023</p>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="msg1">
+          <h1>Praia da feiticeira - Ilha Bela </h1>
+
+          <div class="conteudoMSG1">
+            <img src="img/ilhabela.webp" class="monaco" alt="" />
+            <p class="textos">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              repellat necessitatibus atque accusantium neque hic deserunt eaque
+              eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+              ea aut perferendis!
+            </p>
+          </div>
+          <div class="infosMSG1">
+            <div class="user">
+              <img src="img/user1.png" class="user1" alt="">
+              <p>Antonio Carlos</p>
+            </div>
+            <div class="local">
+              <i class="bx bxs-pin"></i>
+              <p>São Paulo</p>
+            </div>
+            <div class="data">
+              <i class="bx bx-calendar"></i>
+              <p>21/04/2023</p>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="msg1">
+          <h1>Paraquedismo</h1>
+
+          <div class="conteudoMSG1">
+            <img src="img/paraquedas.jfif" class="monaco" alt="" />
+            <p class="textos">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              repellat necessitatibus atque accusantium neque hic deserunt eaque
+              eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+              ea aut perferendis!
+            </p>
+          </div>
+          <div class="infosMSG1">
+            <div class="user">
+              <img src="img/user1.png" class="user1" alt="">
+              <p>Luana Flausino</p>
+            </div>
+            <div class="local">
+              <i class="bx bxs-pin"></i>
+              <p>Boituva</p>
+            </div>
+            <div class="data">
+              <i class="bx bx-calendar"></i>
+              <p>21/04/2023</p>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="msg1">
+          <h1>Thermas dos laranjais</h1>
+
+          <div class="conteudoMSG1">
+            <img src="img/thermas.jpg" class="monaco" alt="" />
+            <p class="textos">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              repellat necessitatibus atque accusantium neque hic deserunt eaque
+              eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+              ea aut perferendis!
+            </p>
+          </div>
+          <div class="infosMSG1">
+            <div class="user">
+              <img src="img/user1.png" class="user1" alt="">
+              <p>Luana Flausino</p>
+            </div>
+            <div class="local">
+              <i class="bx bxs-pin"></i>
+              <p>Olímpia</p>
+            </div>
+            <div class="data">
+              <i class="bx bx-calendar"></i>
+              <p>21/04/2023</p>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="msg1">
+          <h1>Trilha caminhos do mar</h1>
+
+          <div class="conteudoMSG1">
+            <img src="img/trilha.webp" class="monaco" alt="" />
+            <p class="textos">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              repellat necessitatibus atque accusantium neque hic deserunt eaque
+              eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
+              ea aut perferendis!
+            </p>
+          </div>
+          <div class="infosMSG1">
+            <div class="user">
+              <img src="img/user1.png" class="user1" alt="">
+              <p>Luana Flausino</p>
+            </div>
+            <div class="local">
+              <i class="bx bxs-pin"></i>
+              <p>São Bernardo do Campo - Cubatão</p>
+            </div>
+            <div class="data">
+              <i class="bx bx-calendar"></i>
+              <p>21/04/2023</p>
+            </div>
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="novaViagem" id="id_novaViagem">
+
+
+      <div class="boxMeioCadastro" id="boxMeioCadastro">
+
+
+        <h1 class="tituloMeio">Próxima viagem:</h1>
+        <br><br>
+
+
+        <div class="div-form">
+          <form id="form_postagem" onsubmit="publicar(event)">
+            <label>
+              <p class="textoMeio">Título:</p>
+              <br>
+              <input name="titulo" id="titulo" maxlength="100" type="text" class="ipt_mensagem">
+            </label>
+            <br><br>
+
+            <label>
+              <p class="textoMeio">
+                Descrição (máximo de 250 caracteres):
               </p>
+              <br><br>
+              <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" class="ipt_area"></textarea>
+            </label>
+            <br>
+            <div class="local">
+              <i class="bx bxs-pin"></i>
+              <p>Insira o destino:</p>
+              <input type="text" class="ipt_Destino" id="id_destino" />
             </div>
-            <div class="infosMSG1">
-              <div class="user">
-                <img src="img/user1.png" class="user1" alt="">
-                <p>Luana Flausino</p>
+            <br>
+            <div class="data">
+              <i class="bx bx-calendar"></i>
+              <p>Insira a data da viagem:</p>
+              <input type="date" class="ipt_Data" id="data" />
+            </div>
+            <br><br>
+            <div class="notasbx1">
+              <div class="tipoViagem">
+                <select name="" id="tipo" class="notas">
+                  <option value="0">Tipo da viagem</option>
+                  <option value="1">Radical</option>
+                  <option value="2">Negócios</option>
+                  <option value="3">Praias</option>
+                  <option value="4">Família</option>
+                  <option value="5">Turísticas</option>
+                </select>
+              </div>
+              <br>
+              <select name="" id="avaliacao" class="notas">
+                <option value="0">Avalie sua viagem:</option>
+                <option value="1">Nota: 1</option>
+                <option value="2">Nota: 2</option>
+                <option value="3">Nota: 3</option>
+                <option value="4">Nota: 4</option>
+                <option value="5">Nota: 5</option>
+              </select>
+              <br>
+
+
+              <br>
+              <input class="cadastrarViagem" type="submit">Enviar</input>
+            </div>
+          </form>
         </div>
-                <div class="local">
-                <i class="bx bxs-pin"></i>
-                <p>São Paulo</p>
-              </div>
-              <div class="data">
-                <i class="bx bx-calendar"></i>
-                <p>21/04/2023</p>
-              </div>
-            </div>
-         
-              
-            </div>
-            <div class="msg1">
-              <h1>Praia da feiticeira - Ilha Bela </h1>
-    
-              <div class="conteudoMSG1">
-                <img src="img/ilhabela.webp" class="monaco" alt="" />
-                <p class="textos">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                  repellat necessitatibus atque accusantium neque hic deserunt eaque
-                  eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
-                  ea aut perferendis!
-                </p>
-              </div>
-              <div class="infosMSG1">
-                <div class="user">
-                  <img src="img/user1.png" class="user1" alt="">
-                  <p>Antonio Carlos</p>
+
+      </div>
+    </div>
+
+    <div class="containerDashs" id="idDashs" style="display: none;">
+      <div class="conteudoDashs" id="conteudoDashs">
+
+        <div class="kpis">
+          <div class="boxKpis">
+            <p>Quantidade de viagens realizadas: </p>
+            <span id="qtdViagem"></span>
           </div>
-                  <div class="local">
-                  <i class="bx bxs-pin"></i>
-                  <p>São Paulo</p>
-                </div>
-                <div class="data">
-                  <i class="bx bx-calendar"></i>
-                  <p>21/04/2023</p>
-                </div>
-              </div>
-           
-                
-              </div>
-              
-              <div class="msg1">
-                <h1>Paraquedismo</h1>
-      
-                <div class="conteudoMSG1">
-                  <img src="img/paraquedas.jfif" class="monaco" alt="" />
-                  <p class="textos">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                    repellat necessitatibus atque accusantium neque hic deserunt eaque
-                    eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
-                    ea aut perferendis!
-                  </p>
-                </div>
-                <div class="infosMSG1">
-                  <div class="user">
-                    <img src="img/user1.png" class="user1" alt="">
-                    <p>Luana Flausino</p>
-            </div>
-                    <div class="local">
-                    <i class="bx bxs-pin"></i>
-                    <p>Boituva</p>
-                  </div>
-                  <div class="data">
-                    <i class="bx bx-calendar"></i>
-                    <p>21/04/2023</p>
-                  </div>
-                </div>
-             
-                  
-                </div>
-                <div class="msg1">
-                  <h1>Thermas dos laranjais</h1>
-        
-                  <div class="conteudoMSG1">
-                    <img src="img/thermas.jpg" class="monaco" alt="" />
-                    <p class="textos">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                      repellat necessitatibus atque accusantium neque hic deserunt eaque
-                      eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
-                      ea aut perferendis!
-                    </p>
-                  </div>
-                  <div class="infosMSG1">
-                    <div class="user">
-                      <img src="img/user1.png" class="user1" alt="">
-                      <p>Luana Flausino</p>
-              </div>
-                      <div class="local">
-                      <i class="bx bxs-pin"></i>
-                      <p>Olímpia</p>
-                    </div>
-                    <div class="data">
-                      <i class="bx bx-calendar"></i>
-                      <p>21/04/2023</p>
-                    </div>
-                  </div>
-               
-                    
-                  </div>
-                  <div class="msg1">
-                    <h1>Trilha caminhos do mar</h1>
-          
-                    <div class="conteudoMSG1">
-                      <img src="img/trilha.webp" class="monaco" alt="" />
-                      <p class="textos">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                        repellat necessitatibus atque accusantium neque hic deserunt eaque
-                        eveniet quo ex, alias fugiat corrupti, qui amet sapiente placeat
-                        ea aut perferendis!
-                      </p>
-                    </div>
-                    <div class="infosMSG1">
-                      <div class="user">
-                        <img src="img/user1.png" class="user1" alt="">
-                        <p>Luana Flausino</p>
-                </div>
-                        <div class="local">
-                        <i class="bx bxs-pin"></i>
-                        <p>São Bernardo do Campo - Cubatão</p>
-                      </div>
-                      <div class="data">
-                        <i class="bx bx-calendar"></i>
-                        <p>21/04/2023</p>
-                      </div>
-                    </div>
-                 
-                      
-                    </div>
-          
-        
-                  </div>
-      </div>
+          <div class="boxKpis">
+            <p>Viagem com maior nota: </p>
+            <span id="maiorNota"></span>
+          </div>
 
-      <div class="novaViagem" id="id_novaViagem">
+          <div class="boxKpis">
+            <p>Viagem com menor nota:</p>
+            <span id="menorNota"></span>
 
-
-        <div class="boxMeioCadastro" id="boxMeioCadastro">
-
-
-          <h1 class="tituloMeio">Próxima viagem:</h1>
-          <br><br>
-
-
-          <div class="div-form">
-            <form id="form_postagem" method="post">
-                <label>
-                  <p class="textoMeio">Título:</p>
-                    <br>
-                    <input name="titulo" id="titulo" maxlength="100" type="text" class="ipt_mensagem">
-                </label>
-                <br><br>
-                
-                <label>
-                    <p class="textoMeio">
-                      Descrição (máximo de 250 caracteres):
-                    </p>
-                    <br><br>
-                    <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" class="ipt_area" ></textarea>
-                </label>
-                <br>
-                <div class="local">
-                  <i class="bx bxs-pin"></i>
-                  <p>Insira o destino:</p>
-                  <input type="text" class="ipt_Destino" id="id_destino" />
-                </div>
-                <br>
-                <div class="data">
-                  <i class="bx bx-calendar"></i>
-                  <p>Insira a data da viagem:</p>
-                  <input type="date" class="ipt_Data" id="data"/>
-                </div>
-                <br><br>
-                <div class="notasbx1">
-                <div class="tipoViagem">
-                  <select name="" id="tipo" class="notas">
-                    <option value="0">Tipo da viagem</option>
-                    <option value="1">Radical</option>
-                    <option value="2">Negócios</option>
-                    <option value="3">Praias</option>
-                    <option value="4">Família</option>
-                    <option value="5">Turísticas</option>
-                  </select>
-                  </div>
-                  <br>
-            <select name="" id="avaliacao" class="notas">
-              <option value="0">Avalie sua viagem:</option>
-              <option value="1">Nota: 1</option>
-              <option value="2">Nota: 2</option>
-              <option value="3">Nota: 3</option>
-              <option value="4">Nota: 4</option>
-              <option value="5">Nota: 5</option>
-            </select>
-         <br>
-        
-        
-         <br>
-         <button class="cadastrarViagem" onclick="criarViagem(event)" >Enviar</button>
+          </div>
         </div>
-      </form>
-      </div>
-
+        <div class="dashs">
+          <canvas id="myChartAvaliacao" class="myChartAvaliacao"></canvas>
+          <canvas id="myChartqtdViagens" class="myChartqtdViagens"></canvas>
         </div>
       </div>
-  </body>
+
+
+
+
+
+    </div>
+  </div>
+
+</body>
+
 </html>
 
 <script>
-  
 
-   
-  async function criarViagem(event){
-
-    event.preventDefault()
-
-    var tituloViagem = titulo.value;
-    var descricao = textarea_descricao.value;
-    var avaliacaoMensagem = avaliacao.value;
-    var localViagem = id_destino.value;
-    var dataViagem = data.value;
-    var tipoViagem = tipo.value;
-
-    if(tipoViagem == 1){
-      tipoViagem = 'Radical';
-    }else if(tipoViagem == 2){
-      tipoViagem = 'Negócios'
-    }else if(tipoViagem == 3){
-      tipoViagem == 'Praias';
-    }else if(tipoViagem == 4){
-      tipoViagem == 'Família'
-    }else{
-      tipoViagem == 'Turísticas'
-    } 
-  
-
-
-0
-    await fetch(`/criar/criarViagem`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          // crie um atributo que recebe o valor recuperado aqui
-          // Agora vá para o arquivo routes/usuario.js
-          tituloViagemServer: tituloViagem,
-          descricaoServer: descricao,
-          avaliacaoServer: avaliacaoMensagem,
-          localViagemServer: localViagem,
-          dataViagemServer: dataViagem,
-          tipoViagemServer:tipoViagem
-        }),
-      })
-        .then(res => {
-          console.log(res, 'resposta')
-          return res.json()
-        })
-        .then(data => {
-          console.log(data)
-        })
-        .catch(function (resposta) {
-          console.log(`#ERRO: ${resposta}`);
-        });
-
-      return false;
-  }
-
-// b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  var idUsuario = sessionStorage.ID_USUARIO;
+  var nome = sessionStorage.ID_NOME;
 
 
 
@@ -531,137 +413,420 @@
     mensagem.style.display = "none";
     meuDados.style.display = "block";
     inicial.style.display = "none";
+    boxMeioCadastro.style.display = 'none';
+    id_novaViagem.style.display = "none";
+    conteudoDashs.style.display = 'none'
+    idDashs.style.display = 'none';
   }
   function mensagens() {
     mensagem.style.display = "block";
     meuDados.style.display = "none";
     inicial.style.display = "none"
+    boxMeioCadastro.style.display = 'none';
+    id_novaViagem.style.display = "none";
+    idDashs.style.display = 'none';
+    conteudoDashs.style.display = 'none';
   }
-  function inicio(){
+  function inicio() {
     mensagem.style.display = "none";
     meuDados.style.display = "none";
     inicial.style.display = "block";
+    boxMeioCadastro.style.display = 'none';
+    id_novaViagem.style.display = "none";
+    idDashs.style.display = 'none';
+    conteudoDashs.style.display = 'none';
   }
-  function novaViagem(){
+  function novaViagem() {
 
     mensagem.style.display = "none"
     meuDados.style.display = "none";
     inicial.style.display = "none";
-    idnovaViagem.style.display = "block";
+    id_novaViagem.style.display = "flex";
+    boxMeioCadastro.style.display = "block";
+    idDashs.style.display = 'none';
+    conteudoDashs.style.display = 'none';
   }
-  
-  // function limparFormulario() {
-  //       document.getElementById("form_postagem").reset();
-  //   }
+  function dashs() {
+    mensagem.style.display = "none"
+    meuDados.style.display = "none";
+    inicial.style.display = "none";
+    id_novaViagem.style.display = "none";
+    boxMeioCadastro.style.display = "none";
+    idDashs.style.display = 'block';
+    conteudoDashs.style.display = 'block'
 
 
-  //   function publicar() {
-  //       var idUsuario = sessionStorage.ID_USUARIO;
-  //       // // sessionStorage.NOME_USUARIO = json.nome;
+  }
 
-       
-
-  //       fetch(`/avisos/publicar/${idMensagem}`, {
-  //           method: "post",
-  //           headers: {
-  //               "Content-Type": "application/json"
-  //           },
-  //           body: JSON.stringify(corpo)
-  //       }).then(function (resposta) {
-
-  //           console.log("resposta: ", resposta);
-
-  //           if (resposta.ok) {
-  //               window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-  //               limparFormulario();
-  //               finalizarAguardar();
-  //           } else if (resposta.status == 404) {
-  //               window.alert("Deu 404!");
-  //           } else {
-  //               throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-  //           }
-  //       }).catch(function (resposta) {
-  //           console.log(`#ERRO: ${resposta}`);
-  //           finalizarAguardar();
-  //       });
-
-  //       return false;
-
-  // }
-  // function atualizarFeed() {
-  //       fetch("/avisos/listar").then(function (resposta) {
-  //           if (resposta.ok) {
-  //               if (resposta.status == 204) {
-  //                   var feed = document.getElementById("feed_container");
-  //                   var mensagem = document.createElement("span");
-  //                   mensagem.innerHTML = "Nenhum resultado encontrado."
-  //                   feed.appendChild(mensagem);
-  //                   throw "Nenhum resultado encontrado!!";
-  //               }
-
-  //               resposta.json().then(function (resposta) {
-  //                   console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-  //                   var feed = document.getElementById("feed_container");
-  //                   feed.innerHTML = "";
-  //                   for (let i = 0; i < resposta.length; i++) {
-  //                       var publicacao = resposta[i];
-
-  //                       // criando e manipulando elementos do HTML via JavaScript
-  //                       var divPublicacao = document.createElement("div");
-
-  //                       var spanID = document.createElement("span");
-  //                       var spanTitulo = document.createElement("span");
-  //                       var spanNome = document.createElement("span");
-  //                       var spanDescricao = document.createElement("span");
-  //                       var spanDestino = document.createElement("span");
-  //                       var spanTipo = document.createElement("span");
-  //                       var spanData = document.createElement("span");
-  //                       var spanAvaliacao = document.createElement("span");
+  function limparFormulario() {
+    document.getElementById("form_postagem").reset();
+  }
 
 
-  //                       spanID.innerHTML = "ID: <b>" + publicacao.idMensagem + "</b>";
-  //                       spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-  //                       spanNome.innerHTML = "Autor: <b>" + publicacao.titulo + "</b>";
-  //                       spanDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-  //                       spanDestino.innerHTML = "Destino: <b>" + publicacao.destino + "</b>";
-  //                       spanData.innerHTML = "Data: <b>" + publicacao.data + "</b>";
-  //                       spanAvaliacao.innerHTML ="Avaliacao: <b>" + publicacao.avaliacao + "</b"
+  async function publicar() {
+
+    event.preventDefault()
+
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    var tipoViagem = form_postagem.tipo.value;
+
+
+    if (tipoViagem == 1) {
+      tipoViagem = 'Radical';
+    } else if (tipoViagem == 2) {
+      tipoViagem = 'Negócios'
+    } else if (tipoViagem == 3) {
+      tipoViagem = 'Praias';
+    } else if (tipoViagem == 4) {
+      tipoViagem = 'Família'
+    } else {
+      tipoViagem = 'Turísticas'
+    }
+    var corpo = {
+      tituloViagemServer: form_postagem.titulo.value,
+      descricaoServer: form_postagem.textarea_descricao.value,
+      avaliacaoViagemServer: form_postagem.avaliacao.value,
+      locaViagemServer: form_postagem.id_destino.value,
+      dataViagemServer: form_postagem.data.value,
+      tipoViagemServer: tipoViagem
+    }
+
+    console.log(corpo)
+
+    await fetch(`/criar/publicar/${idUsuario}`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(corpo)
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        window.alert("Post realizado com sucesso !");
+        location.reload();
+        limparFormulario();
+        // finalizarAguardar();
+      } else if (resposta.status == 404) {
+        window.alert("Deu 404!");
+      } else {
+        throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+      // finalizarAguardar();
+    });
+
+    return false;
+  }
+
+
+  async function qtdViagens() {
+
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    await fetch(`/criar/listarPorUsuario/${idUsuario}`)
+
+      .then(response => response.json())
+      .then(data => {
+
+        document.getElementById('qtdViagem').textContent = data.length;
+        var maiorNota = data[0];
+        var menorNota = data[0];
+
+        for (var i = 1; i < data.length; i++) {
+          var notaAtual = data[i].avaliacao;
+
+          if (notaAtual > maiorNota.avaliacao) {
+            maiorNota = data[i];
+
+          }
+        }
+        for (var j = 1; j < data.length; j++) {
+
+          console.log(data[j])
+          var ntAtual = data[j].avaliacao;
+
+          if (ntAtual < menorNota.avaliacao) {
+            menorNota = data[j];
+          }
+        }
 
 
 
-  //                       divPublicacao.className = "publicacao";
-  //                       spanTitulo.id = "inputNumero" + publicacao.idMensagem;
-  //                       spanNome.className = "publicacao-nome";
-  //                       spanTitulo.className = "publicacao-titulo";
-  //                       spanDescricao.className = "publicacao-descricao";
-  //                       spanDestino.className = "publicacao-destino";
-  //                       spanTipo.className = "publicacao-tipo";
-  //                       spanData.className= "publicacao-data";
-  //                       spanAvaliacao.className = "publicacao-avaliacao"
 
-  //                       divDescricao.className = "publicacao-descricao";
+        document.getElementById('maiorNota').textContent = maiorNota.localViagem;
+        document.getElementById('menorNota').textContent = menorNota.localViagem;
+      })
 
-  //                       divPublicacao.appendChild(spanID);
-  //                       divPublicacao.appendChild(spanNome);
-  //                       divPublicacao.appendChild(spanTitulo);
-  //                       divPublicacao.appendChild(spanDescricao);
-  //                       divPublicacao.appendChild(spanDestino);
-  //                       divPublicacao.appendChild(spanData);
-  //                       divPublicacao.appendChild(spanAvaliacao);
-  //                       feed.appendChild(divPublicacao);
-  //                   }
 
-  //                   finalizarAguardar();
-  //               });
-  //           } else {
-  //               throw ('Houve um erro na API!');
-  //           }
-  //       }).catch(function (resposta) {
-  //           console.error(resposta);
-  //           finalizarAguardar();
-  //       });
-  //   }
+  }
+
+  async function atualizarFeed() {
+
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    await fetch(`/criar/listarPorUsuario/${idUsuario}`)
+
+      .then(response => response.json())
+      .then(data => {
+
+        // console.log('Dados em formato JSON:', data);
+
+        var containerEtapas = document.getElementById("containerEtapas")
+        data.forEach(viagens => {
+
+          const card = document.createElement('div');
+          card.classList.add('boxMeio');
+
+          const imagem = document.createElement('img');
+          imagem.classList.add('box1IMG');
+          imagem.src = viagens.imagem;
+          imagem.alt = viagens.titulo;
+
+          const titulo = document.createElement('h2');
+          titulo.classList.add('tituloBox');
+          titulo.textContent = viagens.titulo;
+
+          const descricao = document.createElement('p');
+          descricao.textContent = viagens.descricao;
+
+          const infoBx = document.createElement('div');
+          infoBx.classList.add('infoBx');
+
+          const local = document.createElement('div');
+          local.classList.add('local');
+          const localIcon = document.createElement('i');
+          localIcon.classList.add('bx', 'bxs-pin');
+          const localText = document.createElement('p');
+          localText.textContent = viagens.localViagem;
+          local.appendChild(localIcon);
+          local.appendChild(localText);
+
+          const data = document.createElement('div');
+          data.classList.add('data');
+          const dataIcon = document.createElement('i');
+          dataIcon.classList.add('bx', 'bx-calendar');
+          const dataText = document.createElement('p');
+          dataText.textContent = viagens.dataViagem;
+          data.appendChild(dataIcon);
+          data.appendChild(dataText);
+
+          const notasbx1 = document.createElement('div');
+          notasbx1.classList.add('notasbx1');
+          for (let i = 0; i < viagens.avaliacao; i++) {
+            const starIcon = document.createElement('i');
+            starIcon.classList.add('bx', 'bxs-star');
+            notasbx1.appendChild(starIcon);
+          }
+
+          infoBx.appendChild(local);
+          infoBx.appendChild(data);
+
+          card.appendChild(imagem);
+          card.appendChild(titulo);
+          card.appendChild(descricao);
+          card.appendChild(infoBx);
+          card.appendChild(notasbx1);
+
+          containerEtapas.appendChild(card);
+        });
+      })
+      .catch(function (resposta) {
+        console.error(resposta);
+        finalizarAguardar();
+      });
+  }
+
+  async function buscar() {
+
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    await fetch(`/usuarios/buscar/${idUsuario}`)
+
+      .then(response => response.json())
+      .then(data => {
+
+        console.log(data)
+        // console.log(data.nome)
+        document.getElementById('idPerfil').textContent = data[0].idUsuario;
+        document.getElementById('idNome').textContent = data[0].nome;
+        document.getElementById('idCpf').textContent = data[0].cpf;
+        document.getElementById('idEmail').textContent = data[0].email;
+
+
+      }).catch(function (resposta) {
+        console.error(resposta);
+        finalizarAguardar();
+      });
+
+  }
+
+  async function obterDadosGrafico() {
+
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    console.log("entrou obter dados")
+
+    await fetch(`/metricas/ultimas/${idUsuario}`)
+
+
+      .then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            resposta.reverse();
+
+            plotarGrafico(resposta, idUsuario);
+
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  function plotarGrafico(resposta, idUsuario) {
+
+    console.log('iniciando plotagem do gráfico...');
+    
+
+    // Criando estrutura para plotar gráfico - labels
+    let labels = [];
+
+    // Criando estrutura para plotar gráfico - dados
+    let dados = {
+      labels: labels,
+      datasets: [{
+        label: 'Avaliação das minhas viagens',
+        data: [],
+        fill: false,
+        borderColor: '#03738C',
+        backgroundColor: '#03738C',
+        color: 'rgb(0,0,0)',
+        maxBarThickness: '90',
+        tension: 0.1
+      },
+      ]
+    };
+
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      labels.push(registro.localViagem);
+      dados.datasets[0].data.push(registro.avaliacao);
+    }
+
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels)
+    console.log('Dados:')
+    console.log(dados.datasets)
+    console.log('----------------------------------------------')
+
+    // Criando estrutura para plotar gráfico - config
+    const config = {
+      type: 'bar',
+      data: dados,
+    };
+
+    // Adicionando gráfico criado em div na tela
+    let myChart = new Chart(
+      document.getElementById(`myChartAvaliacao`),
+      config
+    );
+  }
+
+  async function obterDadosGraficoUsuario() {
+
+var idUsuario = sessionStorage.ID_USUARIO;
+
+console.log("entrou obter dados")
+
+await fetch(`/metricas/qtdViagens/${idUsuario}`)
+
+
+  .then(function (response) {
+    if (response.ok) {
+      response.json().then(function (resposta) {
+        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+        resposta.reverse();
+
+        plotarGraficoQtdViagens(resposta, idUsuario);
+
+      });
+    } else {
+      console.error('Nenhum dado encontrado ou erro na API');
+    }
+  })
+  .catch(function (error) {
+    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+  });
+}
+
+function plotarGraficoQtdViagens(resposta, idUsuario) {
+
+console.log('iniciando plotagem do gráfico...');
+
+// Criando estrutura para plotar gráfico - labels
+let labels2 = [];
+
+// Criando estrutura para plotar gráfico - dados
+let dados2 = {
+  labels: labels2,
+  datasets: [{
+    label: 'Quantidade de viagens usuários',
+    data: [],
+    fill: false,
+    borderColor: '#03738C',
+    backgroundColor: 'rgb(3, 166, 166)',
+    maxBarThickness: '90',
+    tension: 0.1
+  },
+  ]
+};
+
+console.log('----------------------------------------------')
+console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+console.log(resposta)
+
+// Inserindo valores recebidos em estrutura para plotar o gráfico
+for (i = 0; i < resposta.length; i++) {
+  var registro = resposta[i];
+  labels2.push(registro.Nome);
+  dados2.datasets[0].data.push(registro.Quantidade_viagens);
+}
+
+console.log('----------------------------------------------')
+console.log('O gráfico será plotado com os respectivos valores:')
+console.log('Labels:')
+console.log(labels2)
+console.log('Dados:')
+console.log(dados2.datasets)
+console.log('----------------------------------------------')
+
+// Criando estrutura para plotar gráfico - config
+const config2 = {
+  type: 'bar',
+  data: dados2,
+};
+
+// Adicionando gráfico criado em div na tela
+let myChart2 = new Chart(
+  document.getElementById(`myChartqtdViagens`),
+  config2
+);
+}
 
 
 

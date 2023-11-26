@@ -1,16 +1,17 @@
 
 var criarModel = require("../models/criarModel");
 
-function criarViagem(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+function publicar(req, res) {
+
     var tituloViagem = req.body.tituloViagemServer;
     var descricao = req.body.descricaoServer;
     var avaliacaoViagem = req.body.avaliacaoViagemServer;
     var localViagem = req.body.locaViagemServer;
     var dataViagem = req.body.dataViagemServer;
     var tipoViagem = req.body.tipoViagemServer;
+    var idUsuario = req.params.idUsuario;
+    
 
-    // Faça as validações dos valores
     if (tituloViagem == undefined) {
         return res.status(400).json({ msg: "Seu titulo está undefined!" })
     } else if (descricao == undefined) {
@@ -19,34 +20,60 @@ function criarViagem(req, res) {
         return res.status(400).json({ msg: "Seu avaliacao está undefined!" })
     }  else if (localViagem == undefined) {
         return res.status(400).json({ msg: "Seu local está undefined!" })
-
     }  else if (dataViagem == undefined) {
         return res.status(400).json({ msg: "Seu data Viagem está undefined!" })
-
     }  else if (tipoViagem == undefined) {
         return res.status(400).json({ msg: "Seu tipo da viagem está undefined!" })
     } 
+    else if (idUsuario == undefined) {
+        return res.status(400).json({ msg: "Seu idUsuario está undefined!" })
+    } 
     else {
-
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        criarModel.criarViagem(tituloViagem, descricao, avaliacaoViagem, localViagem, dataViagem, tipoViagem)
+        criarModel.publicar(tituloViagem, descricao, avaliacaoViagem, localViagem, dataViagem, tipoViagem, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
                 }
-            ).catch(
+            )
+            .catch(
                 function (erro) {
                     console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
+                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
             );
     }
 }
 
+function listarPorUsuario(req, res) {
+    var idUsuario = req.params.idUsuario;
+
+    criarModel.listarPorUsuario(idUsuario)
+        .then(
+            function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!");
+                }
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "Houve um erro ao buscar os avisos: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
+
+
 module.exports = {
-    criarViagem
+    publicar,
+    listarPorUsuario
 }

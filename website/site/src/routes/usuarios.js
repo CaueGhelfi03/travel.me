@@ -17,8 +17,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-// router.post("/criarViagem", function (req, res) {
-//     usuarioController.criarViagem(req, res);
-// });
+router.get("/buscar/:idUsuario", function (req,res){
+    usuarioController.buscar(req,res);
+})
 
 module.exports = router;

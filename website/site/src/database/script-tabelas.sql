@@ -24,6 +24,7 @@ create table endereco(
 create table mensagem(
 	idMensagem int auto_increment,
 	fkUsuario int,
+    imagem varchar(255),
     titulo varchar (90),
 	descricao varchar(255),
 	avaliacao int,
@@ -39,6 +40,10 @@ create table mensagem(
     select * from mensagem;
     select * from endereco;
     
+    
+        
+    
+    select * from usuario join endereco on fkUsuario = idUsuario;
     
     
     

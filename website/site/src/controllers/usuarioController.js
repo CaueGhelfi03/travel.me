@@ -18,6 +18,9 @@ function autenticar(req, res) {
 
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
+
+                        
+
                         res.status(200).json(resultadoAutenticar)
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
@@ -122,6 +125,33 @@ function cadastrar(req, res) {
     }
 
 }
+
+function buscar(req,res){
+    var idUsuario = req.params.idUsuario;
+
+
+    if (idUsuario == undefined) {
+        return res.status(400).json({ msg: "Seu ID está undefined!" })
+    } 
+    else {
+        usuarioModel.buscar(idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            )
+            .catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
  
 
 
@@ -131,5 +161,6 @@ module.exports = {
     autenticar,
     cadastrar,
     passo1Cadastro,
+    buscar
 
 }
